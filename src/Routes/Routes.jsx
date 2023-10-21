@@ -6,6 +6,7 @@ import AddProduct from "../Root/Pages/AddProduct/AddProduct";
 import AddBrand from "../Root/Pages/AddBrand/AddBrand";
 
 
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/brands'),
                 errorElement: <ErrorPage></ErrorPage>,
             },
             {
