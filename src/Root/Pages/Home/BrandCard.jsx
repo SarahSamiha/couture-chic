@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const BrandCard = ({ brand }) => {
 
-    const { _id, brandName, brandThumbnailImage, brandLogo, adImage1, adImage2, adImage3 } = brand
+    const { _id, brandName, brandThumbnailImage} = brand
     return (
-        <Link to={`brands/${_id}`}>
+        <Link to={`/brands/${_id}`}>
             <div className="hero h-80 " style={{ backgroundImage: `url(${brandThumbnailImage})` }}>
                 <div className="hero-overlay bg-opacity-40"></div>
                 <div className="hero-content text-center text-neutral-content">

@@ -72,6 +72,3 @@ const AddBrand = () => {
 };
 
 export default AddBrand;
-// 	Brand image
-// 	Brand name
-// 	Advertisement images
