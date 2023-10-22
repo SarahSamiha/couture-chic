@@ -1,10 +1,34 @@
 import { useLoaderData } from "react-router-dom";
 import { BsCartPlus } from 'react-icons/bs';
+import Swal from 'sweetalert2';
 
 const ProductDetails = () => {
     const product = useLoaderData();
     const { productName, productImage, brandName, type, price, description, rating } = product;
     console.log(product);
+
+    const handleAddToCart = () =>{
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product has been added to your cart',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
+    }
+
     return (
         <div className="bg-cover" style={{ backgroundImage: 'url(https://i.ibb.co/pjF8Rm6/stacked-peaks-haikei.png)' }}>
             <div className="lg:max-w-5xl mx-auto border-2 border-transparent">
@@ -22,9 +46,10 @@ const ProductDetails = () => {
                             <p className="flex justify-end text-lg font-semibold">Rating: {rating}</p>
                         </div>
                         <div className="card-actions justify-end ">
-                            <button className="btn btn-primary w-full mt-12">
+                            <button onClick={handleAddToCart} className="btn btn-primary w-full mt-12">
                                 <BsCartPlus className="text-2xl font-semibold"></BsCartPlus>
-                                Add to cart</button>
+                                Add to cart
+                            </button>
                         </div>
                     </div>
                 </div>
