@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 // import ProductDetails from "../ProductDetails/ProductDetails";
 import ProductCard from "./ProductCard";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import NoProduct from "../../../assets/undraw_void_-3-ggu.svg"
 
 const BrandProducts = () => {
     const brand = useLoaderData();
@@ -54,6 +55,7 @@ const BrandProducts = () => {
                 {
                     products ?
                         <div>
+                            <h1 className="text-center font-bold text-6xl my-12 p-6 bg-primary rounded-xl bg-opacity-30">{brandName}</h1>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {
                                     products.map(product => {
@@ -69,7 +71,11 @@ const BrandProducts = () => {
                             <div>
                                 {
                                     tempProducts.length === 0 &&
-                                    <h1>No Products found</h1>
+                                    <div className="flex justify-center relative">
+                                        <img className="" src={NoProduct} alt="" />
+                                        <h1 className="text-6xl text-primary absolute top-64 right-64">No Products <br /> Found</h1>
+                                    </div>
+
                                 }
                             </div>
                         </div>

@@ -4,7 +4,7 @@ const ProductCard = ({ product }) => {
     const { _id, productName, productImage, brandName, type, price, description, rating } = product;
     return (
         <div className="card bg-base-100 shadow-xl">
-            <figure><img src={productImage} alt="Product Image" /></figure>
+            <figure className="max-h-[300px] h-1/2"><img className="h-full w-full" src={productImage} alt="Product Image" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
                     {productName}
