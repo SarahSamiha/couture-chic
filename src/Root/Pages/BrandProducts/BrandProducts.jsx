@@ -7,7 +7,7 @@ import NoProduct from "../../../assets/undraw_void_-3-ggu.svg"
 
 const BrandProducts = () => {
     const brand = useLoaderData();
-    const { _id, brandName, adImage1, adImage2, adImage3 } = brand;
+    const {brandName, adImage1, adImage2, adImage3 } = brand;
 
     const [products, setProducts] = useState([]);
     // const [brandProducts, setBrandProducts] = useState([]);

@@ -12,16 +12,16 @@ const ProductCard = ({ product }) => {
                     <div className="badge badge-neutral">{rating}</div>
                 </h2>
                 <p>{description.length > 100 ? `${description.slice(0, 100)}...` : `${description}`}</p>
-                <div className="card-actions justify-end">
+                <div className="card-actions">
                     <div className="badge badge-outline">{type}</div>
                     <div className="badge badge-outline">${price}</div>
                     <div className="badge bg-primary font-bold bor">{brandName}</div>
 
                 </div>
-                <div>
-                    <Link to={`/updateProduct/${_id}`}><button className="btn btn-primary w-1/2 ">Update</button></Link>
+                <div className='flex justify-between mt-6'>
+                    <Link to={`/updateProduct/${_id}`}><button className="btn btn-primary px-10">Update</button></Link>
 
-                    <Link to={`/productDetails/${_id}`}><button className="btn btn-neutral w-1/2 ">Details</button></Link>
+                    <Link to={`/productDetails/${_id}`}><button className="btn btn-neutral px-10">Details</button></Link>
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@ const ProductDetails = () => {
                             <p className="flex justify-end text-lg font-semibold">Rating: {rating}</p>
                         </div>
                         <div className="card-actions justify-end ">
-                            <button className="btn btn-primary w-full">
+                            <button className="btn btn-primary w-full mt-12">
                                 <BsCartPlus className="text-2xl font-semibold"></BsCartPlus>
                                 Add to cart</button>
                         </div>
