@@ -18,10 +18,16 @@ const Navbar = ({ theme, setTheme }) => {
     }
 
     const links = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/addBrand'>Add Brand</NavLink></li>
-        <li><NavLink to='/addProduct'>Add Product</NavLink></li>
-        <li><NavLink to='/myCart'>My Cart</NavLink></li>
+        
+        {
+            user &&
+            <>
+                <li><NavLink to='/'>Home</NavLink></li>
+                <li><NavLink to='/addBrand'>Add Brand</NavLink></li>
+                <li><NavLink to='/addProduct'>Add Product</NavLink></li>
+                <li><NavLink to='/myCart'>My Cart</NavLink></li>
+            </>
+        }
     </>
     return (
         <div>
@@ -36,7 +42,7 @@ const Navbar = ({ theme, setTheme }) => {
                         </ul>
                     </div>
 
-                    <a className="btn btn-ghost normal-case font-bold text-3xl">CoutureChic</a>
+                    <Link to='/' className="btn btn-ghost normal-case font-bold text-3xl">CoutureChic</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -44,23 +50,23 @@ const Navbar = ({ theme, setTheme }) => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                {
-                    user ?
-                        <div className="flex gap-2 items-center">
-                            <p className="absolute md:static invisible md:visible text-lg text-darkGreen font-semibold">{user.displayName}</p>
-                            {user.photoURL ?
-                                <img className="w-[40px] h-[40px] rounded-full" src={`${user.photoURL}`} alt="" />
-                                :
-                                <img className="w-[40px] h-[40px] rounded-full" src={userDefaultPic} alt="" />
-                            }
-                            <button onClick={handleSignOut} className="btn btn-ghost">Sign Out</button>
-                        </div>
-                        :
-                        <div>
-                            <Link to='/login' className="btn btn-ghost">Login</Link>
-                            <Link to='/signUp' className="btn btn-ghost">Sign UP</Link>
-                        </div>
-                }
+                    {
+                        user ?
+                            <div className="flex gap-2 items-center">
+                                <p className="absolute md:static invisible md:visible text-lg text-darkGreen font-semibold">{user.displayName}</p>
+                                {user.photoURL ?
+                                    <img className="w-[40px] h-[40px] rounded-full" src={`${user.photoURL}`} alt="" />
+                                    :
+                                    <img className="w-[40px] h-[40px] rounded-full" src={userDefaultPic} alt="" />
+                                }
+                                <button onClick={handleSignOut} className="btn btn-ghost">Sign Out</button>
+                            </div>
+                            :
+                            <div>
+                                <Link to='/login' className="btn btn-ghost">Login</Link>
+                                <Link to='/signUp' className="btn btn-ghost">Sign UP</Link>
+                            </div>
+                    }
                     <span onClick={() => setTheme(!theme)}>
                         {
                             theme ?

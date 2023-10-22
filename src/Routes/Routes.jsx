@@ -10,6 +10,7 @@ import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
 import UpdateProduct from "../Root/Pages/UpdateProduct/UpdateProduct";
 import ProductDetails from "../Root/Pages/ProductDetails/ProductDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 
@@ -31,25 +32,25 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addBrand',
-                element: <AddBrand></AddBrand>
+                element: <PrivateRoutes><AddBrand></AddBrand></PrivateRoutes>
             },
             {
                 path: '/addProduct',
-                element: <AddProduct></AddProduct>
+                element: <PrivateRoutes><AddProduct></AddProduct></PrivateRoutes>
             },
             {
                 path: '/updateProduct/:id',
-                element: <UpdateProduct></UpdateProduct>,
+                element: <PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
                 loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`), 
             },
             {
                 path: '/productDetails/:id',
-                element: <ProductDetails></ProductDetails>,
+                element: <PrivateRoutes><ProductDetails></ProductDetails></PrivateRoutes>,
                 loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
             },
             {
                 path: '/myCart',
-                element: <MyCart></MyCart>,
+                element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
                 loader: () => fetch('http://localhost:5000/cart'),
             },
             {
