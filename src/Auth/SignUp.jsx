@@ -55,6 +55,8 @@ const SignUp = () => {
                 setSignUpError(error.message);
             })
 
+            fetch('')
+
     }
 
     return (

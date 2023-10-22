@@ -1,4 +1,5 @@
-
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
     const { _id, productName, productImage, brandName, type, price, description, rating } = product;
@@ -10,20 +11,25 @@ const ProductCard = ({ product }) => {
                     {productName}
                     <div className="badge badge-neutral">{rating}</div>
                 </h2>
-                <p>{description}</p>
-                <div className="card-actions justify-end">                  
+                <p>{description.length > 100 ? `${description.slice(0, 100)}...` : `${description}`}</p>
+                <div className="card-actions justify-end">
                     <div className="badge badge-outline">{type}</div>
                     <div className="badge badge-outline">${price}</div>
                     <div className="badge bg-primary font-bold bor">{brandName}</div>
-                    
+
                 </div>
                 <div>
-                <button className="btn btn-primary w-1/2 ">Update</button>
-                <button className="btn btn-neutral w-1/2 ">Details</button>
+                    <Link to={`/updateProduct/${_id}`}><button className="btn btn-primary w-1/2 ">Update</button></Link>
+
+                    <Link to={`/productDetails/${_id}`}><button className="btn btn-neutral w-1/2 ">Details</button></Link>
                 </div>
             </div>
         </div>
     );
 };
+
+ProductCard.propTypes = {
+    product: PropTypes.object,
+}
 
 export default ProductCard;

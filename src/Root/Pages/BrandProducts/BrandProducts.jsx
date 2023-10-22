@@ -73,7 +73,7 @@ const BrandProducts = () => {
                                     tempProducts.length === 0 &&
                                     <div className="flex justify-center relative">
                                         <img className="" src={NoProduct} alt="" />
-                                        <h1 className="text-6xl text-primary absolute top-64 right-64">No Products <br /> Found</h1>
+                                        <h1 className="text-6xl text-primary absolute top-64 right-64 font-bold">No Products <br /> Found</h1>
                                     </div>
 
                                 }
