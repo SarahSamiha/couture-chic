@@ -1,15 +1,27 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { BiSolidMoon, BiMoon } from 'react-icons/bi';
 import PropTypes from 'prop-types';
+import userDefaultPic from '../../assets/user.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../Auth/AuthProvider';
 
 
 
 const Navbar = ({ theme, setTheme }) => {
 
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch();
+    }
+
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/addBrand'>Add Brand</NavLink></li>
         <li><NavLink to='/addProduct'>Add Product</NavLink></li>
+        <li><NavLink to='/myCart'>My Cart</NavLink></li>
     </>
     return (
         <div>
@@ -32,7 +44,23 @@ const Navbar = ({ theme, setTheme }) => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                {
+                    user ?
+                        <div className="flex gap-2 items-center">
+                            <p className="absolute md:static invisible md:visible text-lg text-darkGreen font-semibold">{user.displayName}</p>
+                            {user.photoURL ?
+                                <img className="w-[40px] h-[40px] rounded-full" src={`${user.photoURL}`} alt="" />
+                                :
+                                <img className="w-[40px] h-[40px] rounded-full" src={userDefaultPic} alt="" />
+                            }
+                            <button onClick={handleSignOut} className="btn btn-ghost">Sign Out</button>
+                        </div>
+                        :
+                        <div>
+                            <Link to='/login' className="btn btn-ghost">Login</Link>
+                            <Link to='/signUp' className="btn btn-ghost">Sign UP</Link>
+                        </div>
+                }
                     <span onClick={() => setTheme(!theme)}>
                         {
                             theme ?
