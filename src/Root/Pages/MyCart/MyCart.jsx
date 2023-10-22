@@ -1,9 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import CartCard from "./CartCard";
+import { useState } from "react";
 
 const MyCart = () => {
-    const cart = useLoaderData();
+    const loadedCart = useLoaderData();
+
+    const [cart, setCart] = useState(loadedCart);
+
     console.log(cart);
     return (
         <div className="max-w-sm md:max-w-2xl lg:max-w-6xl mx-auto">
@@ -16,6 +20,8 @@ const MyCart = () => {
                     cart.map(product => <CartCard
                         key={product._id}
                         product={product}
+                        cart={cart}
+                        setCart={setCart}
                     ></CartCard>)
                 }
             </div>
