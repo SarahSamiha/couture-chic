@@ -37,11 +37,11 @@ const AddBrand = () => {
             })
     }
     return (
-        <div className="hero min-h-screen bg-base-200 px-28 py-10">
+        <div className="hero min-h-screen bg-base-200 px-6 md:px-28 py-10">
             <div className="hero-content flex-col lg:flex-row-reverse ">
                 <img src="/src/assets/undraw_shopping_bags_sbj5.svg" className=" rounded-lg w-1/2" />
                 <form onSubmit={handleAddBrand} className="w-full space-y-6">
-                    <h1 className="text-5xl font-bold mb-6">Add a New Brand</h1>
+                    <h1 className="text-5xl font-bold mb-6 text-center lg:text-left">Add New Brand</h1>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Brand Name</span>

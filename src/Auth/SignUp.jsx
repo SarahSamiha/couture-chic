@@ -63,13 +63,13 @@ const SignUp = () => {
         <div>
             <div className="hero min-h-screen">
 
-                <div className="hero-content flex-col  w-full max-w-sm text-xl font-bold">
-                    <div className="text-center lg:text-left">
+                <div className="hero-content flex-col  w-full text-xl font-bold">
+                    <div className="text-center">
                         <h1 className="text-4xl font-bold">Register now!</h1>
                     </div>
                     <div className=" flex-shrink-0 shadow-2xl bg-primary bg-opacity-30 rounded-xl ">
-                        <form onSubmit={handleSignUp} className="card-body ">
-                            <div className="form-control w-[300px]">
+                        <form onSubmit={handleSignUp} className="card-body w-[380px] md:w-[500px]">
+                            <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>

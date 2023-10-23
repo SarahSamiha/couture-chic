@@ -42,9 +42,9 @@ const UpdateProduct = () => {
             })
     }
     return (
-        <div className=" min-h-screen bg-base-200 px-28 py-10">
-            <h1 className=" text-5xl font-bold mb-6 text-center">Add a New Product</h1>
-            <form onSubmit={handleUpdateProduct} className="w-full  grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className=" min-h-screen bg-base-200 px-6 md:px-28 py-12">
+            <h1 className=" text-5xl font-bold mb-6 text-center">Update Product</h1>
+            <form onSubmit={handleUpdateProduct} className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text">Product Name</span>
@@ -97,7 +97,7 @@ const UpdateProduct = () => {
                         <input type="number" defaultValue={rating} name="rating" placeholder="Rating: 1 to 5" className="input input-bordered w-full" required />
                     </div>
                 </div>
-                <input className="btn btn-primary btn-block col-span-2" type="submit" value="Submit" />
+                <input className="btn btn-primary btn-block lg:col-span-2" type="submit" value="Submit" />
             </form>
         </div>
     );

@@ -41,7 +41,7 @@ const CartCard = ({ product, cart, setCart }) => {
 
 
     return (
-        <div className="flex border rounded-3xl">
+        <div className="flex border border-primary border-opacity-30 rounded-3xl">
             <img className="w-[150px] h-[150px] rounded-l-3xl" src={productImage} alt="" />
             <div className="flex-grow flex flex-col">
                 <p className="bg-primary bg-opacity-50 py-1 text-center font-bold text-xl w-full rounded-r-3xl rounded-b-none">{brandName}</p>

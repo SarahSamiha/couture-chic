@@ -52,13 +52,13 @@ const Login = () => {
     return (
         <div>
             <div className="hero min-h-screen">
-                <div className="hero-content flex-col  w-full max-w-sm text-darkGreen text-xl font-bold">
-                    <div className="text-center lg:text-left">
+                <div className="hero-content flex-col w-full text-xl font-bold">
+                    <div className="text-center">
                         <h1 className="text-4xl font-bold">Login now!</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl rounded-xl  bg-primary bg-opacity-30">
+                    <div className="card flex-shrink-0 w-full  max-w-sm md:max-w-md  shadow-2xl rounded-xl bg-primary bg-opacity-30">
                         <form onSubmit={handleLogin} className="card-body">
-                            <div className="form-control w-[300px]">
+                            <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>

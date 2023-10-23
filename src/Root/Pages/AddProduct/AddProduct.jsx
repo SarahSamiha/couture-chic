@@ -40,7 +40,7 @@ const AddProduct = () => {
             })
     }
     return (
-        <div className=" min-h-screen bg-base-200 px-28 py-10">
+        <div className=" min-h-screen bg-base-200 px-3 md:px-28 py-10">
             <h1 className=" text-5xl font-bold mb-6 text-center">Add a New Product</h1>
             <form onSubmit={handleAddProduct} className="w-full  grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="form-control w-full">
@@ -95,7 +95,7 @@ const AddProduct = () => {
                         <input type="number" name="rating" placeholder="Rating: 1 to 5" className="input input-bordered w-full"  required/>
                     </div>
                 </div>
-                <input className="btn btn-primary btn-block col-span-2" type="submit" value="Add" />
+                <input className="btn btn-primary btn-block lg:col-span-2" type="submit" value="Add" />
             </form>
         </div>
     );

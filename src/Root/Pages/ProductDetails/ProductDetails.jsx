@@ -31,9 +31,9 @@ const ProductDetails = () => {
 
     return (
         <div className="bg-cover" style={{ backgroundImage: 'url(https://i.ibb.co/pjF8Rm6/stacked-peaks-haikei.png)' }}>
-            <div className="lg:max-w-5xl mx-auto border-2 border-transparent">
-                <div className="card card-side bg-base-100 bg-opacity-50 shadow-xl my-12 grid grid-cols-2">
-                    <figure className=""><img src={productImage} alt="Movie" /></figure>
+            <div className="md:max-w-2xl lg:max-w-5xl mx-auto border-2 border-transparent">
+                <div className="card card-side bg-base-100 bg-opacity-50 shadow-xl my-6 md:my-12 grid md:grid-cols-2">
+                    <figure className="md:pl-6 lg:p-0 rounded-t-xl lg:rounded-r-none  rounded-b-none lg:rounded-l-sm"><img src={productImage} alt="Movie" /></figure>
                     <div className="card-body ">
                         <h1 className="border-b-2 border-neutral text-2xl font-semibold">{brandName}</h1>
                         <h2 className="card-title text-xl font-bold">{productName}</h2>

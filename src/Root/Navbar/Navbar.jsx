@@ -18,7 +18,7 @@ const Navbar = ({ theme, setTheme }) => {
     }
 
     const links = <>
-        
+
         {
             user &&
             <>
@@ -39,30 +39,39 @@ const Navbar = ({ theme, setTheme }) => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {links}
+                            {
+                                user ?
+                                    <li className='pl-3' onClick={handleSignOut}>Sign Out</li>
+                                    :
+                                    <>
+                                        <li><NavLink to='/login'>Login</NavLink></li>
+                                        <li><NavLink to='/signUp'>Sign Up</NavLink></li>
+                                    </>
+                            }
                         </ul>
                     </div>
 
                     <Link to='/' className="btn btn-ghost normal-case font-bold text-3xl">CoutureChic</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 text-lg">
                         {links}
                     </ul>
                 </div>
                 <div className="navbar-end">
                     {
                         user ?
-                            <div className="flex gap-2 items-center">
+                            <div className="flex flex-row-reverse md:flex-row gap-2 items-center">
                                 <p className="absolute md:static invisible md:visible text-lg text-darkGreen font-semibold">{user.displayName}</p>
                                 {user.photoURL ?
                                     <img className="w-[40px] h-[40px] rounded-full" src={`${user.photoURL}`} alt="" />
                                     :
                                     <img className="w-[40px] h-[40px] rounded-full" src={userDefaultPic} alt="" />
                                 }
-                                <button onClick={handleSignOut} className="btn btn-ghost">Sign Out</button>
+                                <button onClick={handleSignOut} className="btn btn-ghost invisible md:visible">Sign Out</button>
                             </div>
                             :
-                            <div>
+                            <div className='invisible md:visible'>
                                 <Link to='/login' className="btn btn-ghost">Login</Link>
                                 <Link to='/signUp' className="btn btn-ghost">Sign UP</Link>
                             </div>

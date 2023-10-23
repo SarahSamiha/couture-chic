@@ -12,7 +12,7 @@ const Home = () => {
         <div>
             <Header></Header>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto gap-6 my-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-sm md:max-w-2xl lg:max-w-6xl mx-auto gap-6 my-10">
                 {
                     brands.map(brand => <BrandCard key={brand._id} brand={brand}></BrandCard>)
                 }
