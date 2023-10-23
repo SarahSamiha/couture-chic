@@ -18,7 +18,7 @@ const AddProduct = () => {
 
         console.log(newProduct);
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -21,7 +21,7 @@ const UpdateProduct = () => {
 
         console.log(updatedProduct);
 
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
