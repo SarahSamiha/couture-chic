@@ -19,7 +19,7 @@ const AllProducts = () => {
             <div>
                 <Title title={"All Products"}></Title>
 
-                <p className="max-w-xs md:max-w-xl lg:max-w-xl mx-auto my-3 text-center">
+                <p className="max-w-xs md:max-w-xl lg:max-w-xl mx-auto my-3 text-center" data-aos="fade-up" data-aos-duration="3000">
                     Elevate your wardrobe and redefine your personal style with ease, as you discover the finest in fashion. Immerse yourself in the art of exquisite dressing, where every purchase is a statement of luxury and refinement.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
