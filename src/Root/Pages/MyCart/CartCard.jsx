@@ -18,7 +18,7 @@ const CartCard = ({ product, cart, setCart }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/cart/${_id}`, {
+                fetch(`https://couture-chic-server.vercel.app/cart/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

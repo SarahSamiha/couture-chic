@@ -13,7 +13,7 @@ const BrandProducts = () => {
     // const [brandProducts, setBrandProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/products')
+        fetch('https://couture-chic-server.vercel.app/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

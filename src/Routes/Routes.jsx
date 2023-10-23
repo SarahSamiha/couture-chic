@@ -23,20 +23,20 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/brands'),
+                loader: () => fetch('https://couture-chic-server.vercel.app/brands'),
                 errorElement: <ErrorPage></ErrorPage>,
                 children: [
                     {
                         path: '/',
                         element: <AllProducts></AllProducts>,
-                        loader: () => fetch('https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/products'),
+                        loader: () => fetch('https://couture-chic-server.vercel.app/products'),
                     }
                 ],
             },
             {
                 path: "/brands/:id",
                 element: <BrandProducts></BrandProducts>,
-                loader: ({ params }) => fetch(`https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/brands/${params.id}`),
+                loader: ({ params }) => fetch(`https://couture-chic-server.vercel.app/brands/${params.id}`),
             },
             {
                 path: '/addBrand',
@@ -49,17 +49,17 @@ const router = createBrowserRouter([
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
-                loader: ({ params }) => fetch(`https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/products/${params.id}`),
+                loader: ({ params }) => fetch(`https://couture-chic-server.vercel.app/products/${params.id}`),
             },
             {
                 path: '/productDetails/:id',
                 element: <PrivateRoutes><ProductDetails></ProductDetails></PrivateRoutes>,
-                loader: ({ params }) => fetch(`https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/products/${params.id}`),
+                loader: ({ params }) => fetch(`https://couture-chic-server.vercel.app/products/${params.id}`),
             },
             {
                 path: '/myCart',
                 element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
-                loader: () => fetch('https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/cart'),
+                loader: () => fetch('https://couture-chic-server.vercel.app/cart'),
             },
             {
                 path: '/login',

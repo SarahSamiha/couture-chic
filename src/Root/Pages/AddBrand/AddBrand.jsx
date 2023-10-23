@@ -16,7 +16,7 @@ const AddBrand = () => {
 
         console.log(newBrand);
 
-        fetch('https://couture-chic-server-f40392nub-sarah-samiha-zamans-projects.vercel.app/brands', {
+        fetch('https://couture-chic-server.vercel.app/brands', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
