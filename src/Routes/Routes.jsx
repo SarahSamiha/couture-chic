@@ -11,6 +11,7 @@ import SignUp from "../Auth/SignUp";
 import UpdateProduct from "../Root/Pages/UpdateProduct/UpdateProduct";
 import ProductDetails from "../Root/Pages/ProductDetails/ProductDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import AllProducts from "../Root/Pages/Home/AllProducts/AllProducts";
 
 
 
@@ -24,6 +25,13 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/brands'),
                 errorElement: <ErrorPage></ErrorPage>,
+                children: [
+                    {
+                        path:'/',
+                        element: <AllProducts></AllProducts>,
+                        loader: () => fetch('http://localhost:5000/products'),
+                    }
+                ],
             },
             {
                 path: "/brands/:id",
